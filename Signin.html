@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #dce7f7;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+        }
+
+        .form {
+            position: relative;
+            z-index: 1;
+            background: white;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .form input {
+            background: lightgrey;
+            width: 100%;
+            border-radius: 10px;
+            margin: 0 0 15px;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .form button {
+            outline: 0;
+            background: #F7B32BFF;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+
+        .form button:hover {
+            background: #45a049;
+        }
+
+        h5{
+            color: #103bb3;
+            text-align: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Sign in here</h1>
+    <form name="rform">
+        <div class="login-page">
+            <div class="form" onsubmit="return ValidateForm()">
+                <input type="text" id="username" name="username" placeholder="username">
+                <input type="password" id="password" name="password" placeholder="password">
+                <button onclick="validateForm()">LOG IN</button>
+                <a href="#"><h5>Forgot Password?</h5></a>
+                <a href="Signup.html"><h5>Don't have an account?</h5></a>
+    </form>
+    </div>
+    </div>
+    <script>
+        function validateForm() {
+
+            var name = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (name.trim() == '') {
+                alert("Please enter your username.");
+                return;
+            }
+
+            if (password.trim() == '') {
+                alert("Please enter password.");
+                return;
+            }
+
+            // if (password.length < 8) {
+            //     isValid = false;
+            // }
+
+
+            alert("Signed In successfully!");
+
+            document.getElementById("rform").submit();
+        }
+    </script>
+</body>
+
+</html>

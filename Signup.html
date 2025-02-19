@@ -1,0 +1,160 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #dce7f7;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .form {
+            position: relative;
+            z-index: 1;
+            background: white;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+        }
+
+        .form input {
+            outline: 0;
+            background: lightgrey;
+            width: 100%;
+            border-radius: 10px;
+            margin: 0 0 15px;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .form textarea {
+            outline: 0;
+            background: lightgrey;
+            width: 100%;
+            border-radius: 10px;
+            margin: 0 0 15px;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .form button {
+            outline: 0;
+            background:#F7B32BFF;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+
+        .form button:hover {
+            background: #45a049;
+        }
+        
+        h5{
+            color: #103bb3;
+            text-align: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Sign up here</h1>
+    <form id="rform">
+        <div class="form" onsubmit="return ValidateForm()">
+            <input type="textbox" id="firstname" name="firstname" placeholder="First Name">
+            <input type="textbox" id="lastname" name="lastname" placeholder="Last Name">
+            <input type="textbox" id="email" name="email" placeholder="Email-id">
+            <input type="textbox" id="mobile" name="mobile" placeholder="Mobile No.">
+            <textarea id="address" name="address" placeholder="address"></textarea>
+            <input type="textbox" id="username" name="username" placeholder="username">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+            <button onclick="ValidateForm()">SUBMIT</button><br><br>
+            <button>RESET</button>
+            <a href="Signin.html"><h5>Already have an account?</h5></a>
+
+        </div>
+    </form>
+</body>
+<script>
+    function ValidateForm() {
+
+        var fname = document.getElementById("firstname").value;
+        var lname = document.getElementById("lastname").value;
+        var email = document.getElementById("email").value;
+        var mob = document.getElementById("mobile").value;
+        var address = document.getElementById("address").value;
+        var name = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var confpass = document.getElementById("confirmpassword").value;
+
+        if (fname.trim() == '') {
+            alert("Please enter your First Name.");
+            return;
+        }
+
+        if (lname.trim() == '') {
+            alert("Please enter your Last Name.");
+            return;
+        }
+
+        if (email.trim() == '') {
+            alert("Please enter yuor Email-Id.");
+            return;
+        }
+
+        if (mo.trim() == '') {
+            alert("Please enter your Mobile No.");
+            return;
+        }
+
+        if (address.trim() == '') {
+            alert("Please enter your address.");
+            return;
+        }
+
+        if (name.trim() == '') {
+            alert("Please enter your username.");
+            return;
+        }
+        //  password mai ek aur kaam baki hai 
+        if (password.trim() == '') {
+            alert("Please enter password.");
+            return;
+        }
+        //    confirmpassword ka ek aur kaam baki hai
+        if (confpass.trim() == '') {
+            alert("Please enter password.");
+            return;
+        }
+
+        const resetButton = document.querySelector("button[type='reset']");
+
+        resetButton.addEventListener("click", function () {
+            document.getElementById("rform").reset();
+        });
+
+        alert("Signed Up successfully!");
+
+        document.getElementById("rform").submit();
+    }
+</script>
+</script>
+
+</html>

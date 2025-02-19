@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body {
+			background-color: #dce7f7;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.contact-us {
+			height: 100vh;
+			width: 100%;
+			background: #ddd;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.container {
+			width: 100%;
+			max-width: 85%;
+			padding: 20px;
+			background: #fff;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+		}
+
+		.container h2 {
+			font-size: 40px;
+			font-weight: 600;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		.container input,
+		.container textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 10px;
+			border: none;
+			outline: none;
+			background: #f2f2f2;
+			border-radius: 5px;
+			font-size: 18px;
+			letter-spacing: 1px;
+		}
+
+		.container textarea {
+			resize: none;
+			height: 150px;
+		}
+
+		.container button {
+			width: 100%;
+			padding: 10px;
+			background: #4070f4;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 18px;
+			letter-spacing: 1px;
+			cursor: pointer;
+		}
+
+		.container button:hover {
+			background: #3360c6;
+		}
+	</style>
+</head>
+
+<body>
+	<section class="contact-us">
+		<div class="container">
+			<h2>Contact Us</h2>
+			<form name="rform">
+				<input type="text" id="name" name="name" placeholder="Name">
+				<input type="email" id="email" name="email" placeholder="Email">
+				<textarea placeholder="Message"></textarea>
+				<button type="submit" onclick="ValidateForm()">Send Message</button>
+			</form>
+		</div>
+	</section>
+	<script>
+		function ValidateForm() {
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+
+			if (name.trim() == '') {
+                alert("Please enter your name.");
+                return;
+            }
+
+            if (email.trim() == '') {
+                alert("Please enter your email-ID.");
+                return;
+            }
+
+			alert("Thank you for Contacting Us.");
+
+			document.getElementById("rform").submit();
+
+		}
+	</script>
+</body>
+
+</html>

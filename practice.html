@@ -1,0 +1,39 @@
+
+<html>
+<head>
+    <title>Add Two Numbers</title>
+</head>
+<body>
+
+<h2>Add Two Numbers</h2>
+
+<!-- Input fields for the numbers -->
+<label for="num1">Enter first number:</label>
+<input type="number" id="num1" required><br>
+
+<label for="num2">Enter second number:</label>
+<input type="number" id="num2" required><br>
+
+<!-- Button to calculate the sum -->
+<button onclick="addNumbers()">Calculate Sum</button>
+
+<!-- Display the result -->
+<p id="result"></p>
+
+<script>
+    // Function to add the two numbers
+    function addNumbers() {
+        // Get the values from the input fields
+        var num1 = (document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+
+        // Calculate the sum
+        var sum = num1*num2;
+
+        // Display the result
+        document.getElementById("result").innerText = "The sum is: " + sum;
+    }
+</script>
+
+</body>
+</html>
